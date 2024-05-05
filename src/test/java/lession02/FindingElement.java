@@ -129,8 +129,8 @@ public class FindingElement {
     @Test
     public void findingFormsXPath(){
         gotoDemoQAWebsite();
-        String nameExampleXPath = "//input[@placeholder='name@example.com']]";
-        WebElement genderRadioEle = webDriver.findElement(By.xpath(nameExampleXPath));
+        String nameExampleXPath = "//input[@placeholder='name@example.com']";
+        WebElement nameExampleEle = webDriver.findElement(By.xpath(nameExampleXPath));
 
         String selectPictureXPath = "//label[text()='Select picture']";
         WebElement selectPictureEle = webDriver.findElement(By.xpath(selectPictureXPath));
@@ -138,11 +138,11 @@ public class FindingElement {
         String genderXPath = "//input[@name='gender']";
         WebElement genderEle = webDriver.findElement(By.xpath(genderXPath));
 
+        String genderRadioXPath = "//label[@for='gender-radio-1']";
+        WebElement genderRadioELe = webDriver.findElement(By.xpath(genderRadioXPath));
+
         String dateOfBirthXPath = "//input[@id='dateOfBirthInput']";
         WebElement dateOfBirthEle = webDriver.findElement(By.xpath(dateOfBirthXPath));
-
-        String dateInputXPath = "//input[@value='03 May 2024']";
-        WebElement dateInputEle = webDriver.findElement(By.xpath(dateInputXPath));
 
         String fileInputXPath = "//input[@type='file']";
         WebElement fileInputEle = webDriver.findElement(By.xpath(fileInputXPath));
@@ -156,7 +156,7 @@ public class FindingElement {
     public void findingFormsCSS(){
         gotoDemoQAWebsite();
         String nameExampleCSS = "input[placeholder='name@example.com']";
-        WebElement genderRadioEle = webDriver.findElement(By.cssSelector(nameExampleCSS));
+        WebElement nameExampleEle = webDriver.findElement(By.cssSelector(nameExampleCSS));
 
         String uploadPictureCSS = "label[for='uploadPicture']";
         WebElement selectPictureEle = webDriver.findElement(By.cssSelector(uploadPictureCSS));
