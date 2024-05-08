@@ -25,11 +25,11 @@ public class BTVNForm {
      */
     @BeforeClass
     public void beforeClass() {
-        WebDriverManager.getInstance(DriverManagerType.CHROME).setup();
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--max-window-size");
-        chromeOptions.addArguments("--remote-allow-origins=*");
-        webDriver = new ChromeDriver(chromeOptions);
+//        WebDriverManager.getInstance(DriverManagerType.CHROME).setup();
+//        ChromeOptions chromeOptions = new ChromeOptions();
+//        chromeOptions.addArguments("--max-window-size");
+//        chromeOptions.addArguments("--remote-allow-origins=*");
+        webDriver = new ChromeDriver();
     }
 
     /**
@@ -57,6 +57,27 @@ public class BTVNForm {
 
 
         // TODO: 10/05/2023 Làm tương tự với các đối tượng khác
+
+
+
+        String containsAddress = "//label[contains(text(),'Permanent Address')]";
+        WebElement containsAddressEle = webDriver.findElement(By.xpath(containsAddress));
+
+        String startWFull = "//input[starts-with(@placeholder,'Full')]";
+        WebElement wFullEle = webDriver.findElement(By.xpath(startWFull));
+
+        String textEmail = "//label[text()='Email']";
+        WebElement textEmailELe = webDriver.findElement(By.xpath(textEmail));
+
+        String labelCurrent = "//label[normalize-space()='Current Address']";
+        WebElement labelCurrentELe = webDriver.findElement(By.xpath(labelCurrent));
+
+        String orEmail = "//*[@type='email' or @placeholder='name@example.com']";
+        WebElement orEmailEle = webDriver.findElement(By.xpath(orEmail));
+
+        String andFullName = "//*[@autocomplete='off' and @placeholder='Full Name']";
+        WebElement andFullNameEle = webDriver.findElement(By.xpath(andFullName));
+
     }
 
     /**
@@ -82,6 +103,25 @@ public class BTVNForm {
 
 
         // TODO: 10/05/2023 Làm tương tự với các đối tượng khác
+
+
+        String ancestorXPath = "//*[@placeholder='name@example.com']/ancestor::div[@id='userEmail-wrapper']";
+        WebElement ancestorXPathEle = webDriver.findElement(By.xpath(ancestorXPath));
+
+        String descendantXPath = "//*[@id='userEmail-wrapper']/descendant::label[text()='Email']";
+        WebElement descendantXPathEle = webDriver.findElement(By.xpath(descendantXPath));
+
+        String precedingXPath = "//*[@type='email']/preceding::div[@id='fixedban']";
+        WebElement precedingXPathEle = webDriver.findElement(By.xpath(precedingXPath));
+
+        String followingXPath = "//*[@id='close-fixedban']/following::label[text()='Email']";
+        WebElement followingXPathEle = webDriver.findElement(By.xpath(followingXPath));
+
+        String upSiblingXPath = "//*[@id='Ad.Plus-300x250-2']/preceding-sibling::div";
+        WebElement upSiblingXPathEle = webDriver.findElement(By.xpath(upSiblingXPath));
+
+        String downSiblingXPath = "//*[@id='currentAddress-wrapper']/following-sibling::div[@id='output']";
+        WebElement downSiblingXPathEle = webDriver.findElement(By.xpath(downSiblingXPath));
     }
 
 

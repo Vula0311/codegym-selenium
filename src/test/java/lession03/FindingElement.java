@@ -36,11 +36,11 @@ public class FindingElement {
 //        String chromeDriverPath = "src/test/resources/driver/chromedriver";
 //        System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 
-        WebDriverManager.getInstance(DriverManagerType.CHROME).setup();
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--max-window-size");
-        chromeOptions.addArguments("--remote-allow-origins=*");
-        webDriver = new ChromeDriver(chromeOptions);
+//        WebDriverManager.getInstance(DriverManagerType.CHROME).setup();
+//        ChromeOptions chromeOptions = new ChromeOptions();
+//        chromeOptions.addArguments("--max-window-size");
+//        chromeOptions.addArguments("--remote-allow-origins=*");
+        webDriver = new ChromeDriver();
     }
 
     /**
@@ -97,8 +97,8 @@ public class FindingElement {
         //endregion
 
         // region Find with preceding & following
-        String precedingXPath = "//*[@id='userEmail']/preceding::div[@id='Ad.Plus-728x90']";
-        WebElement precedingElement = webDriver.findElement(By.xpath(precedingXPath));
+//        String precedingXPath = "//*[@id='userEmail']/preceding::div[@id='Ad.Plus-728x90']";
+//        WebElement precedingElement = webDriver.findElement(By.xpath(precedingXPath));
 
         String followingXPath = "//*[@id='userEmail']/following::div[@id='currentAddress-wrapper']";
         WebElement followingElement = webDriver.findElement(By.xpath(followingXPath));

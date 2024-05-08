@@ -141,7 +141,7 @@ public class FindingElement {
         String genderRadioXPath = "//label[@for='gender-radio-1']";
         WebElement genderRadioELe = webDriver.findElement(By.xpath(genderRadioXPath));
 
-        String dateOfBirthXPath = "//input[@id='dateOfBirthInput']";
+        String dateOfBirthXPath = "//div[@id='dateOfBirth']/div/div/input[@id='dateOfBirthInput']";
         WebElement dateOfBirthEle = webDriver.findElement(By.xpath(dateOfBirthXPath));
 
         String fileInputXPath = "//input[@type='file']";
@@ -161,7 +161,7 @@ public class FindingElement {
         String uploadPictureCSS = "label[for='uploadPicture']";
         WebElement selectPictureEle = webDriver.findElement(By.cssSelector(uploadPictureCSS));
 
-        String dateOfBirthCSS = "input#dateOfBirthInput";
+        String dateOfBirthCSS = "input[id=dateOfBirthInput]";
         WebElement dateOfBirthEle = webDriver.findElement(By.cssSelector(dateOfBirthCSS));
 
         String btnSubmitCSS = "button[id='submit']";
